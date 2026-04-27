@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0f0f23;
+  --foreground: #f0f0f5;
+  --card-bg: rgba(255, 255, 255, 0.06);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --accent: #6366f1;
+  --accent-hover: #818cf8;
+  --slot-active: #8b5cf6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  overscroll-behavior-y: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* Emoji grid button */
+.emoji-btn {
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+.emoji-btn:hover {
+  transform: scale(1.1);
+  background: rgba(139, 92, 246, 0.2);
+}
+.emoji-btn:active {
+  transform: scale(0.92);
+}
+
+/* Slot active state */
+.slot-active {
+  box-shadow: 0 0 0 3px var(--slot-active), 0 0 30px rgba(139, 92, 246, 0.3);
+  transform: scale(1.05);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #c084fc, #818cf8, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effect for generate button */
+.generate-glow {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3), 0 0 60px rgba(139, 92, 246, 0.15);
+}
+.generate-glow:hover {
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.5), 0 0 80px rgba(139, 92, 246, 0.25);
+}
+
+/* Modal backdrop blur */
+.modal-backdrop {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Category tab */
+.cat-tab {
+  transition: all 0.2s ease;
+}
+.cat-tab:hover {
+  background: rgba(255,255,255,0.1);
+}
+.cat-tab-active {
+  background: linear-gradient(135deg, rgba(99,102,241,0.3), rgba(139,92,246,0.3));
+  border-color: rgba(139,92,246,0.5);
+}
